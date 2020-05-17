@@ -6,15 +6,21 @@ import dash_table
 import plotly.graph_objs as go
 from scripts import coolblue
 
+# Print options
 pd.set_option('expand_frame_repr', False)
-df = coolblue.CoolBLue().evaluate()
+
+# Init search key
+SEARCH_KEY = 'consoles/nintendo-switch'
+
+df = coolblue.CoolBLue().evaluate(search_key=SEARCH_KEY)
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div(children=[
-    html.H1(children='Nintendo switch tracker'),
+    html.H1(children='Coolblue product tracker'),
+    html.H2(children=f'Tracking information for: {SEARCH_KEY}'),
     dash_table.DataTable(
         id='id_table',
         style_cell={
