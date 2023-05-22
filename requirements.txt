@@ -3,7 +3,7 @@ numpy
 matplotlib
 seaborn
 flask
-requests==2.23.0
+requests==2.31.0
 Flask
 dash==1.12.0
 dash-bootstrap-components
